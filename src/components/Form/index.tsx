@@ -1,21 +1,27 @@
-import React from "react";
-import Button from "../Button";
+import React from 'react';
+
+import Button from '../Button';
+import style from './Form.module.scss';
 
 const Form = () => {
   return (
-    <form>
-      <div>
-        <label htmlFor="task"></label>
+    <form className={style.newTask}>
+      <div className={style.inputContainer}>
+        <label htmlFor="task">
+          Add a new task
+        </label>
         <input
           type="text"
           name="task"
           id="task"
-          placeholder="What do you want to study?"
+          placeholder="What would like to study?"
           required
         />
       </div>
-      <div>
-        <label htmlFor="time"></label>
+      <div className={style.inputContainer}>
+        <label htmlFor="time">
+          Time
+        </label>
         <input
           type="time"
           name="time"
@@ -28,7 +34,7 @@ const Form = () => {
       </div>
       <Button />
     </form>
-  );
-};
+  )
+}
 
 export default Form;

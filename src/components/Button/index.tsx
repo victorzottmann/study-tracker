@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
+
+import style from './Button.module.scss';
 
 const Button = () => {
-  const isActive = false;
-
-  const styles = {
-    backgroundColor: isActive ? "green" : "red",
-  };
-
-  return <button style={styles}>Button</button>;
-};
+  return (
+    <button className={style.button}>
+      Button
+    </button>
+  )
+}
 
 export default Button;

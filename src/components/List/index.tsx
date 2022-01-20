@@ -1,36 +1,36 @@
-import React from "react";
+import React from 'react';
 
-const tasks = [
-  {
-    title: "React",
-    time: "02:00:00",
-  },
-  {
-    title: "JavaScript",
-    time: "01:30:00",
-  },
-  {
-    title: "TypeScript",
-    time: "03:00:00",
-  },
-];
+import style from './List.module.scss';
 
 const List = () => {
+  const tasks = [
+    {
+      title: 'React',
+      time: '02:00:00'
+    }, 
+    {
+      title: 'Javascript',
+      time: '01:00:00'
+    }, 
+    {
+      title: "Typescript",
+      time: "03:00:00"
+    }
+  ];
+
   return (
-    <aside>
-      <h2>Tasks for today</h2>
+    <aside className={style.taskList}>
+      <h2> Today's tasks </h2>
       <ul>
-        {tasks.map((task, index) => {
-          return (
-            <li key={index}>
-              <h3>{task.title}</h3>
-              <span>{task.time}</span>
-            </li>
-          );
-        })}
+        {tasks.map((item, index) => (
+          <li key={index} className={style.item}>
+            <h3>{item.title}</h3>
+            <span>{item.time}</span>
+          </li>
+        ))}
       </ul>
     </aside>
   );
-};
+}
 
 export default List;
