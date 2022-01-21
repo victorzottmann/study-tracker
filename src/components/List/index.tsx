@@ -1,6 +1,5 @@
-import React from 'react';
-
 import style from './List.module.scss';
+import ListItem from './ListItem';
 
 const List = () => {
   const tasks = [
@@ -23,10 +22,8 @@ const List = () => {
       <h2> Today's tasks </h2>
       <ul>
         {tasks.map((item, index) => (
-          <li key={index} className={style.item}>
-            <h3>{item.title}</h3>
-            <span>{item.time}</span>
-          </li>
+          // {...item} gets all props passed into the ListItem component
+          <ListItem key={index} {...item} />
         ))}
       </ul>
     </aside>

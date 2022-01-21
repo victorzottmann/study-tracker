@@ -1,11 +1,10 @@
-import React from 'react';
-
 import style from './Button.module.scss';
 
-const Button: React.FC<{ text: string }> = (props) => {
+// Same as const Button: React.FC<{ text: string }> = ({ text }) => {}
+const Button = ({ text }: { text: string }) => {
   return (
     <button className={style.button}>
-      {props.text}
+      {text}
     </button>
   );
 }
