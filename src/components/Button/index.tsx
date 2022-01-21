@@ -2,12 +2,12 @@ import React from 'react';
 
 import style from './Button.module.scss';
 
-const Button = () => {
+const Button: React.FC<{ text: string }> = (props) => {
   return (
     <button className={style.button}>
-      Button
+      {props.text}
     </button>
-  )
+  );
 }
 
 export default Button;
