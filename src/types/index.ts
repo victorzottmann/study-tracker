@@ -17,6 +17,7 @@ export interface ListItemProps extends TaskProps {
 
 export interface StopwatchProps {
   selected: TaskProps | undefined,
+  finishTask: () => void,
 }
 
 export interface ClockProps {

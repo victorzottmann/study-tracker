@@ -14,9 +14,9 @@ const ListItem = ({
       className={`
         ${style.item}
         ${selected ? style.selectedItem : ""}
+        ${completed ? style.completedItem : ""}
       `}
-      onClick={() =>
-        selectTask({
+      onClick={() => !completed && selectTask({
           title,
           time,
           selected,
@@ -27,6 +27,9 @@ const ListItem = ({
     >
       <h3>{title}</h3>
       <span>{time}</span>
+      {completed && (
+        <span className={style.completed} aria-label="completed-task"></span>
+      )}
     </li>
   );
 };

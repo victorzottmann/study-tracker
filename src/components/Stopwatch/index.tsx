@@ -7,7 +7,7 @@ import Clock from "./Clock";
 import style from "./Stopwatch.module.scss";
 
 
-const Stopwatch = ({ selected }: StopwatchProps) => {
+const Stopwatch = ({ selected, finishTask }: StopwatchProps) => {
   const [time, setTime] = useState<number>();
 
   useEffect(() => {
@@ -22,7 +22,8 @@ const Stopwatch = ({ selected }: StopwatchProps) => {
         setTime(timer - 1);
         return startCountdown(timer - 1);
       }
-    }, 1000)
+      finishTask();
+    }, 1000);
   }
 
   return (
