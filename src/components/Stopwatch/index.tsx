@@ -16,14 +16,24 @@ const Stopwatch = ({ selected }: StopwatchProps) => {
     }
   }, [selected]);
 
+  const startCountdown = (timer: number = 0) => {
+    setTimeout(() => {
+      if (timer > 0) {
+        setTime(timer - 1);
+        return startCountdown(timer - 1);
+      }
+    }, 1000)
+  }
+
   return (
     <div className={style.stopwatch}>
-      <p className={style.title}>Choose a card and start the stopwatch</p>
+      <p className={style.title}>Choose a task and start the stopwatch</p>
       <div className={style.clockWrapper}>
         <Clock time={time} />
       </div>
       <Button
         text="Start"
+        onClick={() => startCountdown(time)}
       />
     </div>
   );

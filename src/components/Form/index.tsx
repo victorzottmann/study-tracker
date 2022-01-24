@@ -68,7 +68,7 @@ class Form extends Component<{
             required
           />
         </div>
-        <Button text="Add" />
+        <Button text="Add" type="submit" />
       </form>
     );
   }
