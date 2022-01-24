@@ -1,9 +1,5 @@
-import { TaskProps } from "../../../types/tasks";
+import { ListItemProps } from "../../../types";
 import style from "./ListItem.module.scss";
-
-interface ListItemProps extends TaskProps {
-  selectTask: (task: TaskProps) => void;
-}
 
 const ListItem = ({
   title,

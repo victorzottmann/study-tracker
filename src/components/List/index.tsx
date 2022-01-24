@@ -1,11 +1,7 @@
-import { TaskProps } from '../../types/tasks';
+import { ListProps } from '../../types';
 import ListItem from './ListItem';
 import style from './List.module.scss';
 
-interface ListProps {
-  tasks: TaskProps[],
-  selectTask: (task: TaskProps) => void; 
-}
 
 const List = ({ tasks, selectTask }: ListProps) => {
   return (

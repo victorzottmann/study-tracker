@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { TaskProps } from "../../types/tasks";
+import { TaskProps } from "../../types";
 import Button from "../Button";
 import style from "./Form.module.scss";
 import { v4 as uuidv4 } from 'uuid';

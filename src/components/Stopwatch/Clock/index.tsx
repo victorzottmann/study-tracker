@@ -1,8 +1,6 @@
+import { ClockProps } from '../../../types';
 import style from './Clock.module.scss'
 
-interface ClockProps {
-  time: number | undefined
-}
 
 const Clock = ({ time = 0 }: ClockProps) => {
   const minutes = Math.floor(time / 60);

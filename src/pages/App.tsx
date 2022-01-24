@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { TaskProps } from '../types/tasks';
+import { TaskProps } from '../types';
 import Form from '../components/Form';
 import List from '../components/List';
 import Stopwatch from '../components/Stopwatch';
