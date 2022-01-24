@@ -1,17 +1,21 @@
-import { TaskProps } from '../../interfaces/tasks';
+import { TaskProps } from '../../types/tasks';
 import ListItem from './ListItem';
 import style from './List.module.scss';
 
+interface ListProps {
+  tasks: TaskProps[],
+  selectTask: (task: TaskProps) => void; 
+}
 
-const List = ({ tasks }: { tasks: TaskProps[] }) => {
+const List = ({ tasks, selectTask }: ListProps) => {
   return (
     <aside className={style.taskList}>
       <h2> Today's tasks </h2>
       <ul>
-        {tasks.map((item, index) => (
+        {tasks.map((item) => (
           // {...item} gets all props passed into the ListItem component
-          // title and time in this case
-          <ListItem key={index} {...item} />
+          // title, time, selected, completed, and id in this case
+          <ListItem key={item.id} {...item} selectTask={selectTask} />
         ))}
       </ul>
     </aside>

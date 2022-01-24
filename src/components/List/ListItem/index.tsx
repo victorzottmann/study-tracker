@@ -1,16 +1,38 @@
-import { TaskProps } from '../../../interfaces/tasks';
-import style from '../List.module.scss';
+import { TaskProps } from "../../../types/tasks";
+import style from "./ListItem.module.scss";
 
-// Same as const ListItem: React.FC<{ title: string, time: string }> = ({ title, time }) => {}
-const ListItem = ({ title, time, selected, completed, id }: TaskProps) => {
-  console.log('Current item: ', { title, time, selected, completed, id });
-  
+interface ListItemProps extends TaskProps {
+  selectTask: (task: TaskProps) => void;
+}
+
+const ListItem = ({
+  title,
+  time,
+  selected,
+  completed,
+  id,
+  selectTask,
+}: ListItemProps) => {
   return (
-    <li className={style.item}>
+    <li
+      className={`
+        ${style.item}
+        ${selected ? style.selectedItem : ""}
+      `}
+      onClick={() =>
+        selectTask({
+          title,
+          time,
+          selected,
+          completed,
+          id,
+        })
+      }
+    >
       <h3>{title}</h3>
       <span>{time}</span>
     </li>
   );
-}
+};
 
 export default ListItem;
